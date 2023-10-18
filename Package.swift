@@ -24,7 +24,7 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "GoogleRidesharingDriver",
-      url: "https://dl.google.com/geosdk/swiftpm/3.1.1/GoogleRidesharingDriver.zip",
+      url: "https://github.com/dogahe/DogaheDriver/releases/download/1.0.0/GoogleRidesharingDriver_3p.xcframework.zip",
       checksum: "fee1a91065a7c0a6110c68d33a638c5d92ac1a900f180a9e27aec777376fa169"
     ),
     .target(
