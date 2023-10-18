@@ -31,7 +31,7 @@ let package = Package(
       name: "GoogleRidesharingDriverTarget",
       dependencies: ["GoogleRidesharingDriver"],
       path: "Driver",
-      sources: ["dummy.m"],
+      sources: ["GMTDEmpty.m"],
       resources: [.copy("Resources/GoogleRidesharingDriver/GoogleRidesharingDriver.bundle")],
       publicHeadersPath: "Sources"
     ),
