@@ -20,7 +20,9 @@ import PackageDescription
 let package = Package(
   name: "GoogleRidesharingDriver", platforms: [.iOS(.v14)],
   products: [.library(name: "GoogleRidesharingDriver", targets: ["GoogleRidesharingDriverTarget"])],
-  dependencies: [],
+  dependencies: [
+    .package(url: "https://github.com/dogahe/DogaheNavigation", "1.0.8"..."1.0.8"),
+  ],
   targets: [
     .binaryTarget(
       name: "GoogleRidesharingDriver",
@@ -29,7 +31,9 @@ let package = Package(
     ),
     .target(
       name: "GoogleRidesharingDriverTarget",
-      dependencies: ["GoogleRidesharingDriver"],
+      dependencies: ["GoogleRidesharingDriver",
+                     .product(name: "GoogleNavigation", package: "DogaheNavigation"),
+      ],
       path: "Driver",
       sources: ["GMTDEmpty.m"],
       resources: [.copy("Resources/GoogleRidesharingDriver/GoogleRidesharingDriver.bundle")],
