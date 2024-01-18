@@ -21,18 +21,18 @@ let package = Package(
   name: "GoogleRidesharingDriver", platforms: [.iOS(.v14)],
   products: [.library(name: "GoogleRidesharingDriver", targets: ["GoogleRidesharingDriverTarget"])],
   dependencies: [
-    .package(url: "https://github.com/dogahe/DogaheNavigation", "1.0.8"..."1.0.8"),
+    .package(url: "https://github.com/googlemaps/ios-navigation-sdk", .exact("5.3.1")),
   ],
   targets: [
     .binaryTarget(
       name: "GoogleRidesharingDriver",
-      url: "https://github.com/dogahe/DogaheDriver/releases/download/1.0.0/GoogleRidesharingDriver_3p.xcframework.zip",
-      checksum: "fee1a91065a7c0a6110c68d33a638c5d92ac1a900f180a9e27aec777376fa169"
+      url: "https://github.com/dogahe/DogaheDriver/releases/download/1.0.4/GoogleRidesharingDriver_3p.xcframework.zip",
+      checksum: "3deeb5c007b50f4d4b0b8b9e39320a13c0e1f2a3d71bd5118286a02e98e815b4"
     ),
     .target(
       name: "GoogleRidesharingDriverTarget",
       dependencies: ["GoogleRidesharingDriver",
-                     .product(name: "GoogleNavigation", package: "DogaheNavigation"),
+                     .product(name: "GoogleNavigation", package: "ios-navigation-sdk"),
       ],
       path: "Driver",
       sources: ["GMTDEmpty.m"],
